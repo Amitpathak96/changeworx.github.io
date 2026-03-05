@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Toolkit for Coaches & Counsellors | Amit Pathak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-gold: #d4af37;
+            --color-gold-light: #f1e5ac;
+            --bg-dark: #0a0c10;
+            --bg-accent: #111827;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text {
+            background: linear-gradient(to right, #d4af37, #f1e5ac, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8a2e 100%);
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 50px -12px rgba(30, 58, 138, 0.5);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .neural-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.15) 0%, transparent 70%);
+        }
+
+        .nav-glass {
+            background: rgba(10, 12, 16, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+        
+        .cta-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Interactive Feature Highlights */
+        .feature-highlight {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-highlight:hover {
+            transform: scale(1.1);
+            opacity: 1 !important;
+        }
+
+        .feature-highlight:hover .main-word {
+            color: var(--color-gold);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+        
+        .feature-highlight:hover .sub-word {
+            color: var(--color-gold-light);
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tighter flex items-center gap-2">
+                <span class="w-8 h-8 gold-gradient-bg rounded-full flex items-center justify-center text-black text-xs font-bold">AP</span>
+                <span class="hidden sm:inline">AMIT PATHAK</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">The Problem</a>
+                <a href="#nlp" class="hover:text-white transition-colors">NLP</a>
+                <a href="#curriculum" class="hover:text-white transition-colors">Curriculum</a>
+                <a href="#trainer" class="hover:text-white transition-colors">Trainer</a>
+            </div>
+            <a href="https://changeworxconsulting.graphy.com/courses/NLP-FOUNDATION-COURSE-694263c58e95e12894c2ca70" target="_blank" class="bg-white/5 hover:bg-white/10 gold-border px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                Enroll Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden neural-bg">
+        <div class="absolute inset-0 z-0">
+            <svg class="absolute top-0 left-0 w-full h-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:rgb(212, 175, 55);stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:rgb(10, 12, 16);stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" fill="url(#grad1)" />
+            </svg>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="inline-block px-4 py-1.5 mb-6 rounded-full border border-gold-border text-[10px] uppercase tracking-[0.3em] font-bold text-gray-300 bg-white/5">
+                For Professional Coaches & Counsellors
+            </span>
+            <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-[1.1] reveal">
+                Master Powerful NLP Techniques to Create <br>
+                <span class="gold-text italic">Breakthrough Results</span> With Your Clients
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed reveal">
+                Stop feeling stuck in long coaching conversations that lead nowhere. Learn the powerful NLP tools that help coaches and counsellors create deep subconscious transformation.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+                <a href="https://changeworxconsulting.graphy.com/courses/NLP-FOUNDATION-COURSE-694263c58e95e12894c2ca70" target="_blank" class="w-full sm:w-auto px-8 py-4 gold-gradient-bg text-black font-bold rounded-lg transition-transform hover:scale-105 cta-glow text-center">
+                    Get Instant Access to the Course
+                </a>
+                <a href="https://changeworxconsulting.graphy.com/courses/NLP-FOUNDATION-COURSE-694263c58e95e12894c2ca70" target="_blank" class="w-full sm:w-auto px-8 py-4 border border-white/20 hover:bg-white/5 font-bold rounded-lg transition-all text-center">
+                    Watch Course Overview
+                </a>
+            </div>
+            
+            <div class="mt-20 flex items-center justify-center gap-8 opacity-40 grayscale reveal">
+                <span class="text-xs uppercase tracking-widest">Global Accreditation</span>
+                <span class="text-xs uppercase tracking-widest">26+ Years Experience</span>
+                <span class="text-xs uppercase tracking-widest">5000+ Students</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 2: THE HIDDEN FRUSTRATION -->
+    <section id="about" class="py-24 bg-accent relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-gold tracking-widest uppercase text-xs font-bold block mb-4">The Challenge</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                        Why Many Coaching Sessions Feel Slow, Repetitive, and Draining
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Many coaches are trained to listen, empathize, and ask powerful questions. But understanding an issue intellectually rarely solves it.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full border border-red-500/50 flex-shrink-0 mt-1 flex items-center justify-center text-red-500">✕</div>
+                            <p class="text-gray-300">Clients repeat the same problems session after session</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full border border-red-500/50 flex-shrink-0 mt-1 flex items-center justify-center text-red-500">✕</div>
+                            <p class="text-gray-300">They understand the issue but still can't change behaviour</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full border border-red-500/50 flex-shrink-0 mt-1 flex items-center justify-center text-red-500">✕</div>
+                            <p class="text-gray-300">Progress is slow and clients feel "trapped" in patterns</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-12 rounded-3xl border border-white/10 reveal">
+                    <blockquote class="text-2xl italic font-serif text-gray-300 mb-6">
+                        "Am I missing a deeper method that actually rewires behaviour?"
+                    </blockquote>
+                    <p class="text-gray-500">
+                        This is the secret question thousands of practitioners ask themselves when talk therapy alone hits a wall.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE REAL REASON -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">Because Most Problems Live in the <span class="gold-text">Subconscious Mind</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5">Habits</div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5">Fears</div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5">Beliefs</div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5">Triggers</div>
+            </div>
+            <p class="text-xl text-gray-400 leading-relaxed mb-8">
+                All operate below conscious awareness. Talking about problems rarely changes them. 
+                To create real transformation, coaches need tools that work with the subconscious mind.
+            </p>
+            <p class="text-2xl font-bold text-white tracking-wide">
+                That is exactly what <span class="gold-border px-4 py-1 rounded">NLP provides.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INTRODUCING NLP -->
+    <section id="nlp" class="py-24 bg-blue-950/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">The Psychological Toolkit Used by <br>Elite Coaches Worldwide</h2>
+                <p class="text-gold uppercase tracking-[0.3em] font-bold text-sm">Neuro-Linguistic Programming</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        NLP studies how thoughts, language and internal mental patterns shape behaviour. It provides practical tools that help professionals:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 gold-gradient-bg rounded-full"></span>
+                            <span>Change emotional states instantly</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 gold-gradient-bg rounded-full"></span>
+                            <span>Reprogram deep-seated limiting beliefs</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 gold-gradient-bg rounded-full"></span>
+                            <span>Break unwanted habits and loops</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 gold-gradient-bg rounded-full"></span>
+                            <span>Create empowering mental patterns</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 gold-gradient-bg rounded-full"></span>
+                            <span>Improve communication and influence</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative reveal">
+                    <div class="absolute -inset-4 gold-gradient-bg opacity-20 blur-2xl rounded-full"></div>
+                    <div class="relative bg-black p-8 rounded-2xl border border-gold-border text-center">
+                        <p class="text-gray-400 italic mb-4 text-sm font-serif">"NLP is to the mind what software is to a computer. It allows you to update the operating system for better results."</p>
+                        <hr class="border-white/10 my-6">
+                        <p class="text-xs uppercase tracking-widest text-gold font-bold">Practical. Proven. Professional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: COURSE INTRO -->
+    <section class="py-24 bg-accent">
+        <div class="max-w-5xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">NLP Toolkit for Coaches & Counsellors</h2>
+            <p class="text-xl text-gold mb-12">A practical recorded course designed for helping professionals.</p>
+            <div class="bg-white/5 border border-white/10 p-10 rounded-3xl glow-blue">
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    This course focuses on real techniques you can immediately apply with clients. Not complicated theory. Just powerful NLP tools that help you create breakthrough moments in your sessions.
+                </p>
+                <a href="https://changeworxconsulting.graphy.com/courses/NLP-FOUNDATION-COURSE-694263c58e95e12894c2ca70" target="_blank" class="inline-block px-10 py-5 gold-gradient-bg text-black font-bold rounded-lg transition-transform hover:scale-105 cta-glow">
+                    Access the Course Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: IMAGINE IF -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Imagine if Your Coaching Sessions Felt Like This</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white/5 border border-white/5 rounded-2xl reveal card-hover transition-all">
+                    <h3 class="text-xl font-bold mb-4 gold-text">Minutes, Not Months</h3>
+                    <p class="text-gray-400">Help clients release heavy emotional blocks and trauma within minutes using specialized submodality shifts.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/5 rounded-2xl reveal card-hover transition-all" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold mb-4 gold-text">Instant Rapport</h3>
+                    <p class="text-gray-400">Build deep, subconscious trust within seconds, allowing clients to open up more freely than ever before.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/5 rounded-2xl reveal card-hover transition-all" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold mb-4 gold-text">Tangible Shifts</h3>
+                    <p class="text-gray-400">Guide powerful mental reprogramming exercises that result in a "visibly different" client by the end of the hour.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: WHAT YOU WILL LEARN -->
+    <section id="curriculum" class="py-24 bg-accent">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">The Curriculum</h2>
+                <p class="text-gray-400">Advanced tools for the modern practitioner</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Modules -->
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">01</div>
+                    <h4 class="font-bold mb-2">Communication Model</h4>
+                    <p class="text-xs text-gray-500">Understand how the brain filters reality and creates problems.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">02</div>
+                    <h4 class="font-bold mb-2">Rapport Building</h4>
+                    <p class="text-xs text-gray-500">Master pacing and leading to create instant alignment.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">03</div>
+                    <h4 class="font-bold mb-2">Representation Systems</h4>
+                    <p class="text-xs text-gray-500">The internal subconscious code that defines how Clients take in outside events.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">04</div>
+                    <h4 class="font-bold mb-2">Anchoring</h4>
+                    <p class="text-xs text-gray-500">Set "triggers" for confidence, calm, and focus on demand.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">05</div>
+                    <h4 class="font-bold mb-2">Belief Change</h4>
+                    <p class="text-xs text-gray-500">The architecture of the mind. Swap limiting beliefs for empowering ones.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">06</div>
+                    <h4 class="font-bold mb-2">Language Patterns</h4>
+                    <p class="text-xs text-gray-500">Use Sleight of Mouth and Milton Model patterns for covert change.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">07</div>
+                    <h4 class="font-bold mb-2">Eye Accessing Cues</h4>
+                    <p class="text-xs text-gray-500">Learn to read the secret signals from eye movement and use that to read Client's issues.</p>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5 rounded-xl reveal">
+                    <div class="text-gold font-bold mb-2">08</div>
+                    <h4 class="font-bold mb-2">Coaching Framework</h4>
+                    <p class="text-xs text-gray-500">Learn simple but very effective frameworks to lead coaching sessions with clear outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FOR WHOM -->
+    <section class="py-24 text-center">
+        <div class="max-w-4xl mx-auto px-6 reveal">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">Designed for Professionals Who Work With People</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-6 py-2 bg-white/5 rounded-full border border-white/10 text-sm">Life Coaches</span>
+                <span class="px-6 py-2 bg-white/5 rounded-full border border-white/10 text-sm">Executive Coaches</span>
+                <span class="px-6 py-2 bg-white/5 rounded-full border border-white/10 text-sm">Counsellors</span>
+                <span class="px-6 py-2 bg-white/5 rounded-full border border-white/10 text-sm">Therapists</span>
+                <span class="px-6 py-2 bg-white/5 rounded-full border border-white/10 text-sm">Trainers</span>
+                <span class="px-6 py-2 bg-white/5 rounded-full border border-white/10 text-sm">HR Professionals</span>
+            </div>
+            <p class="mt-8 text-gray-500 italic">No prior NLP experience required. Beginners are welcome.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 9: TRAINER -->
+    <section id="trainer" class="py-24 bg-accent relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <div class="aspect-square bg-gray-900 rounded-2xl overflow-hidden border border-gold-border/30 shadow-2xl">
+                        <!-- LOCAL IMAGE REFERENCE -->
+                        <img src="295A0122_7.jpg" alt="Amit Pathak - Licensed NLP Trainer" class="w-full h-full object-cover object-center" onerror="this.src='https://via.placeholder.com/600x600?text=Amit+Pathak'">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-black p-8 rounded-xl border border-gold-border reveal" style="transition-delay: 300ms;">
+                        <p class="text-3xl font-bold gold-text">26+</p>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400">Years Excellence</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <span class="text-gold tracking-widest uppercase text-xs font-bold block mb-4">Meet Your Trainer</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Amit Pathak</h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        Amit Pathak is a Licensed NLP Trainer with over 26 years of experience in personal transformation and professional development training.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        He has conducted workshops for thousands of participants across multiple countries, helping coaches, entrepreneurs and professionals unlock powerful mental transformation tools. His teaching style focuses on practical techniques that produce real-world results.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <h5 class="font-bold text-white mb-1">Global Impact</h5>
+                            <p class="text-xs text-gray-500">Students across 12+ countries.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <h5 class="font-bold text-white mb-1">Practicality</h5>
+                            <p class="text-xs text-gray-500">Tools ready for session use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: SOCIAL PROOF -->
+    <section class="py-24 bg-black/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/5 rounded-2xl reveal">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span>
+                    </div>
+                    <p class="text-gray-400 italic mb-4">"Amit's approach to NLP is grounded and practical. I used the anchoring technique the very next day with a high-anxiety client and the results were immediate."</p>
+                    <p class="text-sm font-bold">— Dr Sushma, Executive Coach</p>
+                </div>
+                <div class="p-8 border border-white/5 rounded-2xl reveal" style="transition-delay: 100ms;">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span>
+                    </div>
+                    <p class="text-gray-400 italic mb-4">"I've taken many courses, but this toolkit gave me the 'how-to' that was missing from my traditional counseling training."</p>
+                    <p class="text-sm font-bold">— Jacob T, Therapist</p>
+                </div>
+                <div class="p-8 border border-white/5 rounded-2xl reveal" style="transition-delay: 200ms;">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span><span class="text-gold">★</span>
+                    </div>
+                    <p class="text-gray-400 italic mb-4">"The techniques alone are worth the price of the course. It changed how I handle my own limiting beliefs as well."</p>
+                    <p class="text-sm font-bold">— Anita K., Life Mentor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11 & 12: VALUE & CTA -->
+    <section id="cta" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full neural-bg opacity-30"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8">Ready to Transform Your Coaching Career?</h2>
+            <div class="bg-white/5 border border-gold-border p-12 rounded-3xl mb-12 backdrop-blur-sm">
+                <h3 class="text-2xl font-bold mb-6 gold-text">NLP Toolkit for Coaches & Counsellors</h3>
+                <ul class="text-left space-y-4 mb-10 max-w-md mx-auto">
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold">✓</span>
+                        <span>Complete Library of Video Lessons</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold">✓</span>
+                        <span>Step-by-step PDF Practice Guides</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold">✓</span>
+                        <span>Lifetime Access to All Materials</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold">✓</span>
+                        <span>Certificate of Completion</span>
+                    </li>
+                </ul>
+                <div class="mb-8">
+                    <p class="text-sm text-gray-500 line-through mb-1 uppercase tracking-widest opacity-50">Standard Value: Rs 7500</p>
+                    <p class="text-2xl font-bold text-gray-400 line-through mb-1">Rs 3500</p>
+                    <p class="text-6xl font-bold text-white mb-2">Rs 1999</p>
+                    <p class="text-gold font-bold uppercase tracking-widest text-xs py-1 px-3 bg-gold/10 inline-block rounded border border-gold/20">Limited time offer just for 2 days</p>
+                </div>
+                <a href="https://changeworxconsulting.graphy.com/courses/NLP-FOUNDATION-COURSE-694263c58e95e12894c2ca70" target="_blank" class="inline-block w-full sm:w-auto px-12 py-5 gold-gradient-bg text-black font-bold rounded-lg transition-transform hover:scale-105 cta-glow text-xl">
+                    Enroll Now & Get Instant Access
+                </a>
+                <p class="mt-6 text-xs text-gray-500 uppercase tracking-widest">Secure 256-bit encrypted checkout</p>
+            </div>
+            
+            <!-- Highlighted Features with Golden Hover Highlight -->
+            <div class="flex flex-wrap justify-center gap-12 mt-12">
+                <div class="flex flex-col items-center feature-highlight cursor-default opacity-60">
+                    <span class="text-xl font-bold text-white transition-all duration-300 main-word">Lifetime</span>
+                    <span class="text-[10px] text-gray-500 uppercase tracking-widest transition-all duration-300 sub-word">Access</span>
+                </div>
+                <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
+                <div class="flex flex-col items-center feature-highlight cursor-default opacity-60">
+                    <span class="text-xl font-bold text-white transition-all duration-300 main-word">Self-Paced</span>
+                    <span class="text-[10px] text-gray-500 uppercase tracking-widest transition-all duration-300 sub-word">Learning</span>
+                </div>
+                <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
+                <div class="flex flex-col items-center feature-highlight cursor-default opacity-60">
+                    <span class="text-xl font-bold text-white transition-all duration-300 main-word">Mobile</span>
+                    <span class="text-[10px] text-gray-500 uppercase tracking-widest transition-all duration-300 sub-word">Friendly</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: FINAL EMOTIONAL CLOSE -->
+    <section class="py-24 bg-black border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-bold mb-10 leading-tight">
+                Great Coaches Ask Powerful Questions.<br>
+                <span class="gold-text italic">Transformational Coaches Have Powerful Tools.</span>
+            </h2>
+            <p class="text-xl text-gray-400 leading-relaxed mb-12">
+                If you work with people who want to change their lives, you deserve tools that can create real breakthroughs. This course will introduce you to some of the most powerful tools used in modern coaching psychology. The next step is simple.
+            </p>
+            <a href="https://changeworxconsulting.graphy.com/courses/NLP-FOUNDATION-COURSE-694263c58e95e12894c2ca70" target="_blank" class="text-gold font-bold uppercase tracking-[0.4em] hover:text-white transition-all text-sm border-b border-gold pb-2">
+                Begin Your Journey Into NLP →
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-black text-gray-600 text-xs tracking-widest uppercase">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:row justify-between items-center gap-8">
+            <p>© 2024 Amit Pathak NLP. All Rights Reserved.</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-gold">Privacy Policy</a>
+                <a href="#" class="hover:text-gold">Terms of Service</a>
+                <a href="#" class="hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll adjustment for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
